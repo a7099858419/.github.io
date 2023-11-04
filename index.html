@@ -1,1 +1,19 @@
-<p>Hello </p>
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>no</title>  
+    <script>  
+        fetch('no')  
+            .then(response => response.text())  
+            .then(content => {  
+                document.getElementById('ssr-content').textContent = content;  
+            })  
+            .catch(error => {  
+                console.error('Error:', error);  
+            });  
+    </script>  
+</head>  
+<body>  
+    <pre id="no-content"></pre>  
+</body>  
+</html>
