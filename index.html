@@ -21,23 +21,27 @@
                 .catch(error => console.error('Error:', error));  
         }  
   
-        document.getElementById('no-button').addEventListener('click', showNoContent); // 添加按钮点击事件监听器  
+        // 点击id为 "womenlia-button" 的按钮时，打开一个新的标签页，并打开网址：womenlia.ltd:520，并移除id为 "womenlia-button" 的按钮  
+        function openWomenliaUrl() {  
+            window.open('http://womenlia.ltd:520'); // 打开新的标签页并打开网址  
+            document.getElementById('womenlia-button').remove(); // 移除按钮  
+        }  
   
-        // 在10秒后，将id为 "no-content" 的内容清空，并恢复id为 "no-button" 的按钮  
+        // 恢复id为 "no-button" 的按钮的点击事件监听器，并重新定义函数  
+        document.getElementById('no-button').addEventListener('click', showNoContent);  
+  
+        // 在10秒后，将id为 "no-content" 的内容清空，并恢复id为 "no-button" 的按钮的点击事件监听器，并重新定义函数  
         setTimeout(() => {  
             document.getElementById('no-content').innerText = ''; // 清空内容  
             document.getElementById('no-button').addEventListener('click', showNoContent); // 恢复按钮的点击事件监听器，并重新定义函数  
         }, 10000);  
   
-        // 点击id为 "womenlia-button" 的按钮时，打开一个新的标签页，并打开网址：womenlia.ltd:520，并移除id为 "womenlia-button" 的按钮  
-        document.getElementById('womenlia-button').addEventListener('click', function() {  
-            window.open('http://womenlia.ltd:520'); // 打开新的标签页并打开网址  
-            document.getElementById('womenlia-button').remove(); // 移除按钮  
-        });  
+        // 恢复id为 "womenlia-button" 的按钮的点击事件监听器，并重新定义函数  
+        document.getElementById('womenlia-button').addEventListener('click', openWomenliaUrl);  
   
-        // 在3秒后，恢复id为 "womenlia-button" 的按钮  
+        // 在3秒后，恢复id为 "womenlia-button" 的按钮的点击事件监听器，并重新定义函数  
         setTimeout(() => {  
-            document.getElementById('womenlia-button').addEventListener('click', function() { /* 点击id为 "womenlia-button" 的按钮时，再次执行之前的操作 */ }); // 恢复按钮的点击事件监听器  
+            document.getElementById('womenlia-button').addEventListener('click', openWomenliaUrl); // 恢复按钮的点击事件监听器，并重新定义函数  
         }, 3000);  
     </script>  
 </body>  
