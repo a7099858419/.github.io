@@ -12,20 +12,21 @@
   
     <script>  
         // 点击id为 "no-button" 的按钮时，显示文件"no"（无后缀文本文件）的内容，并移除id为 "no-button" 的按钮  
-        document.getElementById('no-button').addEventListener('click', function() {  
+        function showNoContent() {  
             fetch('no')  
                 .then(response => response.text())  
                 .then(data => {  
                     document.getElementById('no-content').innerText = data;  
-                    document.getElementById('no-button').remove(); // 移除按钮  
                 })  
                 .catch(error => console.error('Error:', error));  
-        });  
+        }  
+  
+        document.getElementById('no-button').addEventListener('click', showNoContent); // 添加按钮点击事件监听器  
   
         // 在10秒后，将id为 "no-content" 的内容清空，并恢复id为 "no-button" 的按钮  
         setTimeout(() => {  
             document.getElementById('no-content').innerText = ''; // 清空内容  
-            document.getElementById('no-button').addEventListener('click', function() { /* 点击id为 "no-button" 的按钮时，再次执行之前的操作 */ }); // 恢复按钮的点击事件监听器  
+            document.getElementById('no-button').addEventListener('click', showNoContent); // 恢复按钮的点击事件监听器，并重新定义函数  
         }, 10000);  
   
         // 点击id为 "womenlia-button" 的按钮时，打开一个新的标签页，并打开网址：womenlia.ltd:520，并移除id为 "womenlia-button" 的按钮  
