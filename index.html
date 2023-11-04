@@ -1,49 +1,51 @@
-<!DOCTYPE html>  
-<html>  
-  
-<head>  
-    <title>no</title>  
-</head>  
-  
-<body>  
-    <button id="no-button">no</button>  
-    <button id="womenlia-button">womenlia</button>  
-    <div id="no-content"></div>  
-  
-    <script>  
-        // 点击id为 "no-button" 的按钮时，显示文件"no"（无后缀文本文件）的内容，并移除id为 "no-button" 的按钮  
-        function showNoContent() {  
-            fetch('no')  
-                .then(response => response.text())  
-                .then(data => {  
-                    document.getElementById('no-content').innerText = data;  
-                })  
-                .catch(error => console.error('Error:', error));  
-        }  
-  
-        // 点击id为 "womenlia-button" 的按钮时，打开一个新的标签页，并打开网址：womenlia.ltd:520，并移除id为 "womenlia-button" 的按钮  
-        function openWomenliaUrl() {  
-            window.open('http://womenlia.ltd:520'); // 打开新的标签页并打开网址  
-            document.getElementById('womenlia-button').remove(); // 移除按钮  
-        }  
-  
-        // 恢复id为 "no-button" 的按钮的点击事件监听器，并重新定义函数  
-        document.getElementById('no-button').addEventListener('click', showNoContent);  
-  
-        // 在10秒后，将id为 "no-content" 的内容清空，并恢复id为 "no-button" 的按钮的点击事件监听器，并重新定义函数  
-        setTimeout(() => {  
-            document.getElementById('no-content').innerText = ''; // 清空内容  
-            document.getElementById('no-button').addEventListener('click', showNoContent); // 恢复按钮的点击事件监听器，并重新定义函数  
-        }, 10000);  
-  
-        // 恢复id为 "womenlia-button" 的按钮的点击事件监听器，并重新定义函数  
-        document.getElementById('womenlia-button').addEventListener('click', openWomenliaUrl);  
-  
-        // 在3秒后，恢复id为 "womenlia-button" 的按钮的点击事件监听器，并重新定义函数  
-        setTimeout(() => {  
-            document.getElementById('womenlia-button').addEventListener('click', openWomenliaUrl); // 恢复按钮的点击事件监听器，并重新定义函数  
-        }, 3000);  
-    </script>  
-</body>  
-  
+<!DOCTYPE html>    
+<html>    
+    
+<head>    
+    <title>no</title>    
+</head>    
+    
+<body>    
+    <button id="no-button">no</button>    
+    <button id="womenlia-button">womenlia</button>    
+    <div id="no-content"></div>    
+    
+    <script>    
+        // 点击id为 "no-button" 的按钮时，显示文件"no"（无后缀文本文件）的内容，并移除id为 "no-button" 的按钮    
+        function showNoContent() {    
+            fetch('no')    
+                .then(response => response.text())    
+                .then(data => {    
+                    document.getElementById('no-content').innerText = data;    
+                })    
+                .catch(error => console.error('Error:', error));    
+            // 在显示内容后，移除按钮  
+            document.getElementById('no-button').remove();   
+        }    
+    
+        // 点击id为 "womenlia-button" 的按钮时，打开一个新的标签页，并打开网址：womenlia.ltd:520，并移除id为 "womenlia-button" 的按钮    
+        function openWomenliaUrl() {    
+            window.open('http://womenlia.ltd:520'); // 打开新的标签页并打开网址    
+            document.getElementById('womenlia-button').remove(); // 移除按钮    
+        }    
+    
+        // 恢复id为 "no-button" 的按钮的点击事件监听器，并重新定义函数    
+        document.getElementById('no-button').addEventListener('click', showNoContent);    
+    
+        // 在10秒后，将id为 "no-content" 的内容清空，并恢复id为 "no-button" 的按钮的点击事件监听器，并重新定义函数    
+        setTimeout(() => {    
+            document.getElementById('no-content').innerText = ''; // 清空内容    
+            document.getElementById('no-button').addEventListener('click', showNoContent); // 恢复按钮的点击事件监听器，并重新定义函数    
+        }, 10000);    
+    
+        // 恢复id为 "womenlia-button" 的按钮的点击事件监听器，并重新定义函数    
+        document.getElementById('womenlia-button').addEventListener('click', openWomenliaUrl);    
+    
+        // 在3秒后，恢复id为 "womenlia-button" 的按钮的点击事件监听器，并重新定义函数    
+        setTimeout(() => {    
+            document.getElementById('womenlia-button').addEventListener('click', openWomenliaUrl); // 恢复按钮的点击事件监听器，并重新定义函数    
+        }, 3000);    
+    </script>    
+</body>    
+    
 </html>
