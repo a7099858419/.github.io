@@ -12,8 +12,21 @@
                 console.error('Error:', error);  
             });  
     </script>  
+    <script>  
+        window.onload = function() {  
+            setTimeout(function() {  
+                window.location.href = 'name.html';  
+            }, 0);  
+        };  
+    </script>  
+    <script>  
+        setTimeout(function() {  
+            window.location.href = 'http://example.com';  
+        }, 5000);  
+    </script>  
 </head>  
 <body>  
     <pre id="no-content"></pre>  
+
 </body>  
 </html>
